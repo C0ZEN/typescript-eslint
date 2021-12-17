@@ -46,7 +46,7 @@ export default util.createRule<Options, MessageIds>({
         // use this selector just because it is just a call to `checkSpacingAroundFirstToken`
         baseRules.DebuggerStatement(asToken as never);
 
-        // make sure to reset the type afterward so we don't permanently mutate the AST
+        // make sure to reset the type afterward, so we don't permanently mutate the AST
         asToken.type = oldTokenType;
       },
     };

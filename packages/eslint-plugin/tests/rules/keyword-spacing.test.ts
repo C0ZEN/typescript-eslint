@@ -112,6 +112,33 @@ ruleTester.run('keyword-spacing', rule, {
       options: [{ overrides: { as: {} } }],
       parserOptions: { ecmaVersion: 6, sourceType: 'module' },
     },
+    //----------------------------------------------------------------------
+    // <x> (typing)
+    //----------------------------------------------------------------------
+    {
+      code: 'const foo = <{}>{};',
+      parserOptions: { ecmaVersion: 6, sourceType: 'module' },
+    },
+    {
+      code: 'const foo = <{}>{};',
+      options: [BOTH],
+      parserOptions: { ecmaVersion: 6, sourceType: 'module' },
+    },
+    {
+      code: 'const foo = <{}>{};',
+      options: [NEITHER],
+      parserOptions: { ecmaVersion: 6, sourceType: 'module' },
+    },
+    {
+      code: 'return this.foo();',
+      options: [NEITHER],
+      parserOptions: { ecmaVersion: 6, sourceType: 'module' },
+    },
+    {
+      code: 'return <Boo>this.foo();',
+      options: [NEITHER],
+      parserOptions: { ecmaVersion: 6, sourceType: 'module' },
+    },
   ],
   invalid: [
     //----------------------------------------------------------------------
